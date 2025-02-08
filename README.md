@@ -2,7 +2,7 @@
 
 It runs only on Windows.
 
-Go into the `installationfile/` folder and open the `FileNameFizerSetup.exe` file to install the program
+Go into the `installationfile/` folder and open the `FileNameFixerSetup.exe` file to install the program
 
 
 ___
