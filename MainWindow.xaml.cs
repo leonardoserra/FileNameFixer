@@ -2,7 +2,7 @@
 using System.Windows;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
-namespace SnakeCaseFileRenamer
+namespace FileNameFixer
 {
     public partial class MainWindow : Window
     {

@@ -1,4 +1,4 @@
-﻿<Window x:Class="SnakeCaseFileRenamer.MainWindow"
+﻿<Window x:Class="FileNameFixer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="File Name Fixer" Height="200" Width="500" MinWidth="520" MinHeight="220" MaxWidth="520" MaxHeight="217" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontFamily="Microsoft JhengHei UI">
