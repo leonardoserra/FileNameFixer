@@ -12,4 +12,9 @@
     <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+	  <Folder Include="installationfile\NewFolder\" />
+	  <Folder Include="example_images\NewFolder\" />
+  </ItemGroup>
+
 </Project>
