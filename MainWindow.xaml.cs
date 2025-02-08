@@ -29,7 +29,7 @@ namespace FileNameFixer
                 foreach (var filePath in files)
                 {
                     string? directory = Path.GetDirectoryName(filePath);
-                    string originalFileName = Path.GetFileName(filePath);
+                    string originalFileName = Path.GetFileName(filePath).Trim();
                     string newFileName = ConvertToSnakeCaseToLower(originalFileName);
 
                     if (directory != null)
