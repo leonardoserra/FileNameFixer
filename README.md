@@ -7,8 +7,8 @@ Go into the `installationfile/` folder and open the `FileNameFizerSetup.exe` fil
 
 ___
 
-  ![before_image](./examples_images/before.png)
+  ![before_image](./example_images/before.png)
 
 ___
 
-  ![after_image](/examples_images/after.png)
+  ![after_image](/example_images/after.png)

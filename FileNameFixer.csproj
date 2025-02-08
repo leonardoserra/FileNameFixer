@@ -9,18 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="example_images\NewFolder\**" />
     <Compile Remove="installationfile\NewFolder\**" />
+    <EmbeddedResource Remove="example_images\NewFolder\**" />
     <EmbeddedResource Remove="installationfile\NewFolder\**" />
+    <None Remove="example_images\NewFolder\**" />
     <None Remove="installationfile\NewFolder\**" />
+    <Page Remove="example_images\NewFolder\**" />
     <Page Remove="installationfile\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-	  <Folder Include="example_images\NewFolder\" />
   </ItemGroup>
 
 </Project>
