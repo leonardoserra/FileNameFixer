@@ -25,31 +25,41 @@ namespace FileNameFixer
             {
                 int renamedCount = 0;
                 var files = Directory.GetFiles(folderPath);
+                List<string> sameNameFiles = [];
 
                 foreach (var filePath in files)
                 {
                     string? directory = Path.GetDirectoryName(filePath);
-                    string originalFileName = Path.GetFileName(filePath).Trim();
-                    string newFileName = ConvertToSnakeCaseToLower(originalFileName);
+                    string originalFileName = Path.GetFileNameWithoutExtension(filePath);
+                    string extension = Path.GetExtension(filePath);
+                    string newFileName = ConvertToSnakeCaseToLower(originalFileName) + extension;
 
                     if (directory != null)
                     {
                         if (newFileName != originalFileName)
                         {
                             string newFilePath = Path.Combine(directory, newFileName);
-
+                           
                             // Handle potential name conflicts
                             if (File.Exists(newFilePath))
                             {
-                                MessageBox.Show($"Skipped '{originalFileName}' - target name already exists",
-                                              "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                                continue;
+                                sameNameFiles.Add(newFileName);
                             }
+                            else
+                            {
+                                File.Move(filePath, newFilePath);
+                                renamedCount++;
+                            }
+
                             
-                            File.Move(filePath, newFilePath);
-                            renamedCount++;
                         }
                     }
+                }
+                if (sameNameFiles.Count > 0)
+                {
+                    string message = "\n" + string.Join("\n", sameNameFiles);
+                    MessageBox.Show($"Skipped - target name already exists \n {message} ",
+                                    "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
 
                 MessageBox.Show($"Successfully renamed {renamedCount} files!",
@@ -64,7 +74,7 @@ namespace FileNameFixer
 
         private string ConvertToSnakeCaseToLower(string input)
         {
-            // Replace spaces with underscores and make lowercase
+            // Replace spaces and hyphen with underscores and make lowercase
             return input.Trim()
                 .Replace(" ", "_")
                 .Replace("-", "_")
